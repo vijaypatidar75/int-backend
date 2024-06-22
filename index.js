@@ -4,10 +4,10 @@ import cors from "cors";
 import mongoose from "mongoose";
 
 const app = express();
-
+const databaseurl = process.env.DATABASE_URL;
 // Connect to MongoDB for documents
 mongoose
-  .connect("mongodb://localhost:27017/mydatabase", {
+  .connect(databaseurl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
